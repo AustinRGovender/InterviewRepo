@@ -29,6 +29,11 @@ namespace Interview.Test2
         {
                 new SelectElement(element).SelectByText(value);
         }
+
+        public static void SelectHyperLink(this IWebElement element)
+        {
+            element.Click();          
+        }
     }
 }
 
