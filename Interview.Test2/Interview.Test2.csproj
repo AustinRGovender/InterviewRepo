@@ -98,6 +98,7 @@
   <ItemGroup>
     <Compile Include="BaseTest.cs" />
     <Compile Include="DataLib.cs" />
+    <Compile Include="DataLib2.cs" />
     <Compile Include="GetMethods.cs" />
     <Compile Include="LoginPageObject.cs" />
     <Compile Include="UpdatePageObjects.cs" />
@@ -109,6 +110,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="DataSources\Data.xlsx" />
+    <None Include="DataSources\Data2.xlsx" />
     <None Include="license" />
     <None Include="packages.config" />
   </ItemGroup>

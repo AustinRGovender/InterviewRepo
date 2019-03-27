@@ -24,7 +24,7 @@ namespace Interview.Test2
             element.Click();
         }
 
-        //Selecting a dropdown control
+        //Selecting a ddl
         public static void SelectDropdown(this IWebElement element, string value)
         {
                 new SelectElement(element).SelectByText(value);
