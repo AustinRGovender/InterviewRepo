@@ -29,16 +29,24 @@ namespace Interview.Test2
         [Test]
         public void TcLoginUsingExistingCredentials()
         {
+            DataLib.PopulateInCollection(@"C:\Users\User\Desktop\New folder\Interview\Interview.Test2\DataSources\Data.xlsx");
+
             LoginPageObject loginObject = new LoginPageObject();
-            UpdatePageObjects pageObj = loginObject.Login("austinryang1@gmail.com", "aA1asdfghjk");
+
+            UpdatePageObjects pageObj = loginObject.Login(DataLib.ReadData(1, "Email"), DataLib.ReadData(1, "Password"));
         }         
 
         [Test]
         public void TcUpdateUserCredentials()
         {
+            DataLib.PopulateInCollection(@"C:\Users\User\Desktop\Data.xlsx");
+
             LoginPageObject loginObject = new LoginPageObject();
-            UpdatePageObjects pageObj = loginObject.Login("forthisdemo@gmail.com", "aA1asdfghjk");
-            pageObj.UpdateDetails("AR", "Autsin", "Govender", "autsin@gmail.com", "aA1fhashfj");
+
+            UpdatePageObjects pageObj = loginObject.Login(DataLib.ReadData(1,"Email"), DataLib.ReadData(1, "Password"));
+
+            pageObj.UpdateDetails(DataLib.ReadData(1,"Initial"), DataLib.ReadData(1, "Name"), DataLib.ReadData(1, "Surname"), 
+                DataLib.ReadData(1, "UpdateEmail"), DataLib.ReadData(1, "UpdatePassword"));
         }
 
         [Test]
