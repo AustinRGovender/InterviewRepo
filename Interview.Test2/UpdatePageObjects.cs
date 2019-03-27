@@ -15,6 +15,8 @@ namespace Interview.Test2
             PageFactory.InitElements(PropCollection.driver, this);
         }
 
+        //Refer to LoginPageObjects for comments
+        //Utilizing POM design
         [FindsBy(How = How.Id, Using = "initials")]
         public IWebElement txtInitial { get; set; }
 

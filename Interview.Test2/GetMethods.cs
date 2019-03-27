@@ -17,14 +17,10 @@ namespace Interview.Test2
 
         public static string getTextFromDdl(this IWebElement element)
         {
-            //Not in use
+            //Create ddl on Website --DONT FORGET
             return new SelectElement(element).AllSelectedOptions.SingleOrDefault().Text;
         }
 
-        //public static string getSubmitButtonProperties(this IWebElement element)
-        //{
 
-        //    return;
-        //}
     }
 }
