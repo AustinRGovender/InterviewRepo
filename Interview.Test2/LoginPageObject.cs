@@ -26,10 +26,11 @@ namespace Interview.Test2
 
         public UpdatePageObjects Login(string email, string password)
         {
-            txtEmail.SendKeys(email);
-            Console.WriteLine("Intitials are: " + GetMethods.GetText("emailT", PropertyType.Id));
-            txtPassword.SendKeys(password);
-            btnSubmit.Click();
+            txtEmail.EnterText(email);
+            Console.WriteLine("Email is: " + txtEmail.GetText());
+            txtPassword.EnterText(password);
+            Console.WriteLine("Passwprd is: " + txtPassword.GetText());
+            btnSubmit.Clicks();
 
             return new UpdatePageObjects();
         }

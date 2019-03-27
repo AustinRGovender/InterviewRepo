@@ -42,12 +42,6 @@ namespace Interview.Test2
         }
 
         [Test]
-        public void TcValidateEmailEntryAgainstDatasource()
-        {
-            GetMethods.GetText("emailT", PropertyType.Id);
-        }
-
-        [Test]
         public void TcValidatePasswordAgainstDatasource()
         {
 
