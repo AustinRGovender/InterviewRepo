@@ -40,6 +40,7 @@ namespace Interview.Test2
             txtName.EnterText(name);
             txtSurname.EnterText(surname);
             txtEmail.EnterText(email);
+            Console.WriteLine("Updated Email is : " + txtEmail.GetText());
             txtPassword.EnterText(password);
             btnSubmit.Clicks();
         }

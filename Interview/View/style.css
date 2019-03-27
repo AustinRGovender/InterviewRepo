@@ -1,0 +1,275 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video{
+     margin: 0;
+     padding: 0;
+     border: 0;
+     outline: 0;
+     font-size: 100%;
+     vertical-align: baseline;
+     background: transparent
+}
+ body {
+     line-height: 1;
+     font-family: arial;
+ }
+
+ h1 {
+     font-size: 25px;
+ }
+
+ h2 {
+     font-size: 21px;
+ }
+
+ h3 {
+     font-size: 18px;
+ }
+
+ h4 {
+     font-size: 16px;
+ }
+
+ article,
+ aside,
+ details,
+ figcaption,
+ figure,
+ footer,
+ header,
+ hgroup,
+ menu,
+ nav,
+ section {
+     display: block
+ }
+
+ nav ul {
+     list-style: none
+ }
+
+ blockquote,
+ q {
+     quotes: none
+ }
+
+ blockquote:before,
+ blockquote:after,
+ q:before,
+ q:after {
+     content: none
+ }
+
+ a {
+     margin: 0;
+     padding: 0;
+     font-size: 100%;
+     vertical-align: baseline;
+     background: transparent
+ }
+
+ ins {
+     background-color: #ff9;
+     color: #000;
+     text-decoration: none
+ }
+
+ mark {
+     background-color: #ff9;
+     color: #000;
+     font-style: italic;
+     font-weight: bold
+ }
+
+ del {
+     text-decoration: line-through
+ }
+
+ abbr[title],
+ dfn[title] {
+     border-bottom: 1px dotted;
+     cursor: help
+ }
+
+ table {
+     border-collapse: collapse;
+     border-spacing: 0
+ }
+
+ hr {
+     display: block;
+     height: 1px;
+     border: 0;
+     border-top: 1px solid #ccc;
+     margin: 1em 0;
+     padding: 0
+ }
+
+ input,
+ select {
+     vertical-align: middle
+ }
+
+ body,
+ html {
+     background-color: #FFF;
+ }
+
+ header {
+  border-radius: 10px;
+  border: 2px solid #73AD21;
+  padding: 20px 30px;
+  width: 940px;
+  height: 100;
+  margin: auto
+ }
+
+ nav {
+     display: inline-block;
+ }
+
+ nav ul li a {
+  border-radius: 10px;
+  border: 2px solid black;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  width: 150px;
+  height: 10px;
+ }
+
+ nav ul li {
+     display: inline-block;
+     margin: 10px;
+ }
+
+ nav ul {
+     list-style: none;
+ }
+
+ #pageContent {
+     max-width: 1000px;
+     margin: auto;
+     border: none;
+ }
+
+ main {
+     float: left;
+     width: 60%;
+ }
+
+
+ main section {}
+
+ footer {
+  border-radius: 10px;
+  border: 2px solid #73AD21;
+  padding: 10px 30px;
+  width: 940px;
+  height: 50px;
+  margin: auto;
+  clear: both;
+  text-align: center;
+ }
+
+ footer p {
+     padding: 20px;
+ }
+
+ aside > div {
+     margin: 10px auto;
+     background: grey;
+     min-height: 100px;
+ }
+
+ #logo {
+     display: inline-block;
+     vertical-align: middle;
+     font-size: 30px;
+     margin-right: 75px;
+     color: black;
+ }
+
+ body > section {
+     max-width: 1000px;
+     margin: auto;
+     padding: 30px 0px;
+     border-bottom: 1px solid #999;
+     color: #333;
+ }
+
+ @media screen and (max-width: 1000px) {
+     body > section {
+         padding: 30px 20px;
+     }
+ }
+
+ @media screen and (max-width: 600px) {
+     main {
+         float: none;
+         width: 100%;
+     }
+ }
+
+ /* Style all input fields */
+ input {
+     width: 100%;
+     padding: 12px;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     box-sizing: border-box;
+     margin-top: 6px;
+     margin-bottom: 16px;
+ }
+
+ /* Style the submit button */
+ input[type=submit] {
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px 30px;
+  width: 940px;
+  text-align: center;
+  color: green
+  margin: auto
+ }
+
+ /* Style the container for inputs */
+ .container {
+     background-color: white;
+     padding: 20px;
+ }
+
+ /* The message box is shown when the user clicks on the password field */
+ #message {
+     display: none;
+     background: #f1f1f1;
+     color: #000;
+     position: relative;
+     padding: 20px;
+     margin-top: 10px;
+ }
+
+ #message p {
+     padding: 10px 35px;
+     font-size: 18px;
+ }
+
+ /* Add a green text color and a checkmark when the requirements are right */
+ .valid {
+     color: green;
+ }
+
+ .valid:before {
+     position: relative;
+     left: -35px;
+     content: "SUCCESS";
+ }
+
+ /* Add a red text color and an "x" when the requirements are wrong */
+ .invalid {
+     color: red;
+ }
+
+ .invalid:before {
+     position: relative;
+     left: -35px;
+     content: "X";
+ }

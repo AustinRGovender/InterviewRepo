@@ -20,5 +20,11 @@ namespace Interview.Test2
             //Not in use
             return new SelectElement(element).AllSelectedOptions.SingleOrDefault().Text;
         }
+
+        //public static string getSubmitButtonProperties(this IWebElement element)
+        //{
+
+        //    return;
+        //}
     }
 }

@@ -15,14 +15,18 @@ namespace Interview.Test2
             PageFactory.InitElements(PropCollection.driver, this);
         }
 
+        //FindById
         [FindsBy(How = How.Id, Using = "emailT")]
         public IWebElement txtEmail { get; set; }
-
+        //FindByName
         [FindsBy(How = How.Name, Using = "psw")]
         public IWebElement txtPassword { get; set; }
-
+        //FindByCssSelector
         [FindsBy(How = How.CssSelector, Using = "#pageContent > div.container > form > input[type=" + "submit" + "]:nth-child(5)")]
         public IWebElement btnSubmit { get; set; }
+        //FindById-Link
+        [FindsBy(How = How.Id, Using = "link1")]
+        public IWebElement hLink { get; set; }
 
         public UpdatePageObjects Login(string email, string password)
         {
@@ -33,6 +37,11 @@ namespace Interview.Test2
             btnSubmit.Clicks();
 
             return new UpdatePageObjects();
+        }
+
+        public void VerifyHyperLinkGithub()
+        {
+            hLink.Clicks();
         }
     }
 }

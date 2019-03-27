@@ -10,7 +10,7 @@ using OpenQA.Selenium.Chrome;
 
 namespace Interview.Test2
 {
-
+    [TestFixture]
     class TestSuite
     {
 
@@ -18,47 +18,49 @@ namespace Interview.Test2
         {                             }
 
         [SetUp]
-        public void TcInitialize()
+        public void InitializeEnvironmentAndDatasources()
         {
+            DataLib.PopulateInCollection(@"C:\Users\User\Desktop\New folder\Interview\Interview.Test2\DataSources\Data.xlsx");
             PropCollection.driver = new ChromeDriver();
             PropCollection.driver.Manage().Window.Maximize();
             PropCollection.driver.Navigate().GoToUrl("http://127.0.0.1:16864/index.html"); //replace with instance
             Console.WriteLine("Opened Browser");
         }
 
-        [Test]
-        public void TcLoginUsingExistingCredentials()
+
+
+        [Test, Order(1)]
+        public void tc1VerifyLoginProcedurePositeTest()
         {
-            DataLib.PopulateInCollection(@"C:\Users\User\Desktop\New folder\Interview\Interview.Test2\DataSources\Data.xlsx");
-
             LoginPageObject loginObject = new LoginPageObject();
-
             UpdatePageObjects pageObj = loginObject.Login(DataLib.ReadData(1, "Email"), DataLib.ReadData(1, "Password"));
         }         
 
-        [Test]
-        public void TcUpdateUserCredentials()
+        [Test, Order(2)]
+        public void tc2UpdateUserCredentialsUponLoginDDTPositiveTest()
         {
-            DataLib.PopulateInCollection(@"C:\Users\User\Desktop\Data.xlsx");
-
+            //Testing cycle --dont forget to point to ExcelDataTableCount
+            for(int i =1; i <6 ; i++) { 
             LoginPageObject loginObject = new LoginPageObject();
 
-            UpdatePageObjects pageObj = loginObject.Login(DataLib.ReadData(1,"Email"), DataLib.ReadData(1, "Password"));
+            UpdatePageObjects pageObj = loginObject.Login(DataLib.ReadData(i,"Email"), DataLib.ReadData(i, "Password"));
 
-            pageObj.UpdateDetails(DataLib.ReadData(1,"Initial"), DataLib.ReadData(1, "Name"), DataLib.ReadData(1, "Surname"), 
+            pageObj.UpdateDetails(DataLib.ReadData(i,"Initial"), DataLib.ReadData(i, "Name"), DataLib.ReadData(i, "Surname"), 
                 DataLib.ReadData(1, "UpdateEmail"), DataLib.ReadData(1, "UpdatePassword"));
+            }
         }
 
-        [Test]
-        public void TcValidatePasswordAgainstDatasource()
+        [Test, Order(3)]
+        public void tc3ValidateButtonProperty()
         {
-
+            
         }
 
-        [Test]
-        public void TcValidateButtonProperties()
+        [Test, Order(4)]
+        public void tc4ValidateHyperLinkNavigation()
         {
-
+            LoginPageObject loginObject = new LoginPageObject();
+            loginObject.VerifyHyperLinkGithub();
         }
 
         [TearDown]
