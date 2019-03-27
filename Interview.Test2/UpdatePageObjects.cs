@@ -35,14 +35,13 @@ namespace Interview.Test2
 
         public void UpdateDetails(string initial, string name, string surname, string email, string password)
         {
-            txtInitial.SendKeys(initial);
-            Console.WriteLine("Intitials are: " + GetMethods.GetText("initials", PropertyType.Id));
-            txtName.SendKeys(name);
-            txtSurname.SendKeys(surname);
-            txtEmail.SendKeys(email);
-            txtPassword.SendKeys(password);
-           
-            btnSubmit.Click();
+            txtInitial.EnterText(initial);
+            Console.WriteLine("Intitials are: " + txtInitial.GetText());
+            txtName.EnterText(name);
+            txtSurname.EnterText(surname);
+            txtEmail.EnterText(email);
+            txtPassword.EnterText(password);
+            btnSubmit.Clicks();
         }
     }
 }
