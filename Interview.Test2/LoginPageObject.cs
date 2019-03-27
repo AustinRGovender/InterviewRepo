@@ -18,6 +18,9 @@ namespace Interview.Test2
         //FindById
         [FindsBy(How = How.Id, Using = "emailT")]
         public IWebElement txtEmail { get; set; }
+        //ForFailCondition
+        [FindsBy(How = How.Id, Using = "ema")]
+        public IWebElement txtEmailFail { get; set; }
         //FindByName
         [FindsBy(How = How.Name, Using = "psw")]
         public IWebElement txtPassword { get; set; }
@@ -38,6 +41,19 @@ namespace Interview.Test2
 
             return new UpdatePageObjects();
         }
+
+        public UpdatePageObjects LoginFail(string email, string password)
+        {
+            txtEmailFail.EnterText(email);
+            Console.WriteLine("Email is: " + txtEmail.GetText());
+            txtPassword.EnterText(password);
+            Console.WriteLine("Passwprd is: " + txtPassword.GetText());
+            btnSubmit.Clicks();
+
+            return new UpdatePageObjects();
+        }
+
+
 
         public void VerifyHyperLinkGithub()
         {
