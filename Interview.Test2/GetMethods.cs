@@ -21,6 +21,5 @@ namespace Interview.Test2
             return new SelectElement(element).AllSelectedOptions.SingleOrDefault().Text;
         }
 
-
     }
 }

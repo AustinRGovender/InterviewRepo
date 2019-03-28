@@ -45,9 +45,8 @@ namespace Interview.Test2
         public UpdatePageObjects LoginFail(string email, string password)
         {
             txtEmailFail.EnterText(email);
-            Console.WriteLine("Email is: " + txtEmail.GetText());
             txtPassword.EnterText(password);
-            Console.WriteLine("Passwprd is: " + txtPassword.GetText());
+
             btnSubmit.Clicks();
 
             return new UpdatePageObjects();
