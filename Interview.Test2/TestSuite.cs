@@ -19,7 +19,7 @@ namespace Interview.Test2
         [Test, Order(1)]
         [Author("Austin Ryan Govender", "austinryang1@gmai.com")]
         [Description("This test is to simulate Logging in to the application via via credentials parsed in Excel Data Source")]
-        public void tc1VerifyLoginProcedurePositeTest()
+        public void tc1VerifyLoginProcedurePositiveTest()
         {           
             try {
                 test = extent.CreateTest("tc1VerifyLoginProcedurePositeTest").Info("tc1VerifyLoginProcedurePositeTest Started");
@@ -30,6 +30,7 @@ namespace Interview.Test2
             }
             catch (Exception e)
             {
+                test.Log(Status.Fail, e.ToString());
                 throw;
             }
         }         
@@ -47,11 +48,11 @@ namespace Interview.Test2
                     LoginPageObject loginObject = new LoginPageObject();
 
                     UpdatePageObjects pageObj = loginObject.Login(DataLib2.ReadData2(i, "Email"), DataLib2.ReadData2(i, "Password"));
-                    test.Log(Status.Info, "Successfully Logged In with DS Data" + i);
+                    test.Log(Status.Info, "Successfully Logged In with DS Data. Email: " + DataLib2.ReadData2(i, "Email") + "With Password: " + DataLib2.ReadData2(i, "Password"));
                     test.Log(Status.Pass, "Login Passed for Line: " + i );
                     pageObj.UpdateDetails(DataLib2.ReadData2(i, "Initial"), DataLib2.ReadData2(i, "Name"), DataLib2.ReadData2(i, "Surname"),
                         DataLib2.ReadData2(i, "UpdateEmail"), DataLib2.ReadData2(i, "UpdatePassword"));
-                    test.Log(Status.Pass, "Update Passed for: " + i);
+                    test.Log(Status.Pass, "Update Passed for: " + DataLib2.ReadData2(i, "Initial"));
                 }
             }
             catch (Exception e)
